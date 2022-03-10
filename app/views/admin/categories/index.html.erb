@@ -9,15 +9,17 @@
   <div class="panel panel-default">
 
     <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
+      <thead class="text-center">
+        <tr >
           <th>Category Name</th>
+          <th>Created at</th>
         </tr>
       </thead>
       <tbody>
         <% @categories.each do |category|%>
           <tr>
             <td><%= category.name %> </td>
+            <td><%= category.created_at %> </td>
           </tr>
         <% end %>
       </tbody>
