@@ -17,7 +17,7 @@ RSpec.describe Product, type: :model do
   }
 
   describe "Validations" do
-    it "validates with valid attributes" do
+    it "validates with valid data" do
       expect(subject).to be_valid
       expect(subject.errors.full_messages).to be_empty
     end
