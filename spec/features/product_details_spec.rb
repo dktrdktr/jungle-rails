@@ -17,7 +17,7 @@ RSpec.feature "Visitor clicks a product in the homepage", type: :feature, js: tr
     end
   end
 
-  scenario "Visitor see the product details page" do
+  scenario "Visitor sees the product details page" do
     visit root_path
 
     find(".product:nth-of-type(1) img").click
