@@ -73,8 +73,37 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe '.authenticate_with_credentials' do
-  #   # examples for this class method here
-  # end
+  describe '.authenticate_with_credentials' do
+
+    before(:each) do
+      subject.save!
+    end
+
+    it "works with valid credentials" do
+      test_user = User.authenticate_with_credentials(subject.email, subject.password)
+      expect(test_user).to eq subject
+    end
+
+    it "doesn't work with incorrect password" do
+      test_user = User.authenticate_with_credentials(subject.email, "wrong")
+      expect(test_user).to eq nil
+    end
+
+    it "doesn't work with incorrect email" do
+      test_user = User.authenticate_with_credentials("wrong@error.com", subject.password)
+      expect(test_user).to eq nil
+    end
+
+    it "works with correct email in a different case" do
+      test_user = User.authenticate_with_credentials("CARTER_Lopez@hotmail.com", subject.password)
+      expect(test_user).to eq subject
+    end
+
+    it "works with whitespace before email address" do
+      test_user = User.authenticate_with_credentials(" " + subject.email, subject.password)
+      expect(test_user).to eq subject
+    end
+
+  end
 
 end
