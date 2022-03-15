@@ -22,7 +22,6 @@ RSpec.feature "Visitor clicks a product in the homepage", type: :feature, js: tr
 
     find(".product:nth-of-type(1) img").click
 
-    expect(page).to have_content("Quantity")
     expect(page).to have_content("Description")
   end
   
