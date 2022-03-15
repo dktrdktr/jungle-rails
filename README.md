@@ -31,3 +31,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 - PostgreSQL 9.x
 - Stripe
+
+## Screenshot
+
+!["Homepage"](https://github.com/dktrdktr/jungle-rails/blob/master/docs/home_page.png)
